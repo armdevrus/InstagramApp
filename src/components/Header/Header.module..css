@@ -3,6 +3,7 @@
     position: fixed;
     width: 100%;
     z-index: 5;
+    max-width: 375px;
 }
 .header__id_profile{
     margin: 0;

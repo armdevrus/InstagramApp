@@ -19,20 +19,23 @@
 }
 
 .profile__unordered_list {
+    display: flex;
+    justify-content: center;
     padding: 0;
     margin: 0;
     list-style-type: none
-
 }
 
 .profile__public_info {
-    width: 100%;
     display: flex;
+    flex-direction: column;
+    width: 100%;
     justify-content: center;
 }
 
 .profile__item_list {
     display: flex;
+    padding: 10px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
