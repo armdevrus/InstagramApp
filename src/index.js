@@ -1,25 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import {BrowserRouter} from 'react-router-dom'
+import { PersistGate } from 'redux-persist/integration/react'
+import {Provider} from "react-redux";
+import {store, persistor} from "./store/store";
 import reportWebVitals from './reportWebVitals';
 import firebase from "firebase/compat";
 
-const firebaseConfig = {
-    apiKey: "AIzaSyDrt1C2Dmq4_CZU1kvbBCWiOhIqFigjbjg",
-    authDomain: "fir-instagram-clone-2.firebaseapp.com",
-    databaseURL: "https://fir-instagram-clone-2-default-rtdb.firebaseio.com",
-    projectId: "fir-instagram-clone-2",
-    storageBucket: "fir-instagram-clone-2.appspot.com",
-    messagingSenderId: "719234908721",
-    appId: "1:719234908721:web:eaf7ae0b3f71943370cb10"
-};
+import './index.css';
+import App from './App';
+import firebaseConfig from "./utils/firebaseConfig";
 
 firebase.initializeApp(firebaseConfig)
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <BrowserRouter>
+          <Provider store={store}>
+              <PersistGate loading={null} persistor={persistor}>
+                  <App />
+              </PersistGate>
+          </Provider>
+      </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

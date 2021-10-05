@@ -1,0 +1,6 @@
+.photo_cards__unordered_list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1px;
+    grid-auto-rows: 124px;
+}

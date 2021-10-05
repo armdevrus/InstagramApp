@@ -1,0 +1,66 @@
+.header {
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    max-width: 375px;
+    border-bottom: 1px solid rgba(190, 190, 190, 0.5);
+}
+
+.header__id_profile {
+    font-size: 20px;
+    font-family: 'Helvetica Neue';
+    font-weight: 700;
+}
+
+.header__button {
+    width: 24px;
+    height: 24px;
+    background-size: 24px;
+}
+
+.header__button_add_card {
+    background: no-repeat center/24px url("../../images/icon/icon-plus.svg");
+    margin-right: 10px;
+}
+
+.header__button_menu {
+    background: no-repeat center/24px url("../../images/icon/icon-menu.svg");
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.header__publications_id_profile, .header__subscribers_id_profile {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(95, 93, 93, 0.7);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    text-align: center;
+
+}
+
+.header__publications_title, .header__subscribers_title {
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.header__publications_button, .header__subscribers_button {
+    background: no-repeat center/20px url("../../images/icon/icon-left-arrow.svg");
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+}
+
+.header__publications_wrapper {
+    padding: 10px;
+}
