@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Route, Switch, useHistory} from "react-router-dom";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 import MyAccount from "./components/pages/MyAccount/MyAccount";
 import * as api from './utils/api'
@@ -13,6 +13,7 @@ import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 
 function App() {
 
+    const myUserId = useSelector((state) => state.loggedInUser.value)
     const [isActivePreloader, setIsActivePreloader] = useState(true)
 
     const dispatch = useDispatch()
@@ -24,6 +25,18 @@ function App() {
         dispatch(addLoggedInUser(userId))
         history.push(`/${userId}`)
     }
+
+    const checkToken = () => {
+        if(myUserId !== ''){
+            history.push(`/${myUserId}`)
+        } else {
+            history.push(`/signin`)
+        }
+    }
+
+    useEffect(() => {
+        checkToken()
+    },[])
 
     return (
         <Switch>

@@ -20,6 +20,7 @@ const Navigation = ({
     const history = useHistory()
 
     const handleSignOut = () => {
+        document.body.classList.remove('page_lock');
         persistor.purge()
         api.signOut()
         history.push('/signin')
